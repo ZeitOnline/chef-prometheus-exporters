@@ -8,12 +8,11 @@
 #
 
 unless node['prometheus_exporters']['disable']
-  
-    grok_exporter 'main' do
-      conffile node['prometheus_exporters']['grok']['conffile']
-      port node['prometheus_exporters']['grok']['port']
-      user node['prometheus_exporters']['statsd']['user']
-  
-      action %i[install enable start]
-    end
+  grok_exporter 'main' do
+    conffile node['prometheus_exporters']['grok']['conffile']
+    port node['prometheus_exporters']['grok']['port']
+    user node['prometheus_exporters']['statsd']['user']
+
+    action %i[install enable start]
   end
+end
