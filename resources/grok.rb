@@ -17,7 +17,7 @@ action :install do
   # Set property that can be queried with Chef search
   node.default['prometheus_exporters']['grok']['enabled'] = true
 
-  options = "-config #{conffile}"
+  options = "-config #{new_resource.conffile}"
 
   service_name = "grok_exporter_#{new_resource.name}"
 
