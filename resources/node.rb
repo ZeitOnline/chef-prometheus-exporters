@@ -94,7 +94,7 @@ property :collector_systemd_unit_whitelist, String
 property :collector_textfile_directory, String
 property :collector_vmstat_fields, String
 property :collector_wifi_fixtures, String
-property :log_format, String, default: 'logger:stdout'
+property :log_format, String, default: 'logfmt'
 property :log_level, String, default: 'info'
 property :path_procfs, String
 property :path_rootfs, String
@@ -121,7 +121,7 @@ action :install do
   options += " --collector.filesystem.ignored-mount-points='#{new_resource.collector_filesystem_ignored_mount_points}'" if new_resource.collector_filesystem_ignored_mount_points
   options += " --collector.filesystem.ignored-fs-types='#{new_resource.collector_filesystem_ignored_fs_types}'" if new_resource.collector_filesystem_ignored_fs_types
   options += " --collector.netclass.ignored-devices='#{new_resource.collector_netclass_ignored_devices}'" if new_resource.collector_netclass_ignored_devices
-  options += " --collector.netdev.ignored-devices='#{new_resource.collector_netdev_ignored_devices}'" if new_resource.collector_netdev_ignored_devices
+  options += " --collector.netdev.device-blacklist='#{new_resource.collector_netdev_ignored_devices}'" if new_resource.collector_netdev_ignored_devices
   options += " --collector.netstat.fields='#{new_resource.collector_netstat_fields}'" if new_resource.collector_netstat_fields
   options += " --collector.ntp.server=#{new_resource.collector_ntp_server}" if new_resource.collector_ntp_server
   options += " --collector.ntp.protocol-version=#{new_resource.collector_ntp_protocol_version}" if new_resource.collector_ntp_protocol_version
