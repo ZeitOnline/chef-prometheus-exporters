@@ -6,3 +6,4 @@ default['prometheus_exporters']['apache']['user'] = 'root'
 default['prometheus_exporters']['apache']['scrape_uri'] = 'http://localhost/server-status/?auto'
 default['prometheus_exporters']['apache']['host_override'] = ''
 default['prometheus_exporters']['apache']['insecure'] = false
+default['prometheus_exporters']['apache']['port'] = 9117
