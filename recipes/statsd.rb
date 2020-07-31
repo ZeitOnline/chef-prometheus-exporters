@@ -24,6 +24,7 @@ unless node['prometheus_exporters']['disable']
     statsd_listen_unixgram_mode node['prometheus_exporters']['statsd']['listen_unixgram_mode']
     statsd_mapping_config node['prometheus_exporters']['statsd']['mapping_config']
     statsd_read_buffer node['prometheus_exporters']['statsd']['read_buffer']
+    log_format node['prometheus_exporters']['statsd']['log_format']
     user node['prometheus_exporters']['statsd']['user']
 
     action %i[install enable start]
